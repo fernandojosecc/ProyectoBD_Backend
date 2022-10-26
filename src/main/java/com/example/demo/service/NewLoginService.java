@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 /*@RestController
-@RequestMapping("/login")
+@RequestMapping("/Login")
 @CrossOrigin*/
 public class NewLoginService {
 
@@ -20,9 +20,9 @@ public class NewLoginService {
 
     //Servicio que devuelve un objeto del user si lo encuentra si es en blanco o null es porque no pasa la validacion
     @PostMapping(path = "/user")
-    private ArrayList loginTeacher(@RequestBody login credentials) {
+    private ArrayList loginTeacher(@RequestBody Login credentials) {
         ArrayList usuario =new ArrayList<>();
-        usuario.add(login(credentials));
+        usuario.add(Login(credentials));
         return usuario;
     }
 
@@ -30,17 +30,17 @@ public class NewLoginService {
         ArrayList roles = new ArrayList<>();
         int longitud = userRepository.findByIdUsuarioAndContrasenia(credentials.getIdUsuario(),credentials.getContrasenia()).size();
         if(longitud>0){
-            Optional<rolUsuario> rolUsuario = rolUsuarioRepository.findById(credentials.getIdUsuario());
-            Optional<rolUsuarioMenu> rolUsuarioMenu = rolUsuarioMenuRepository.findById(credentials.getIdUsuario());
+            Optional<RolUsuario> RolUsuario = rolUsuarioRepository.findById(credentials.getIdUsuario());
+            Optional<RolUsuarioMenu> RolUsuarioMenu = rolUsuarioMenuRepository.findById(credentials.getIdUsuario());
             Optional<User> usuario= userRepository.findById(credentials.getIdUsuario());
             roles.add(usuario);
-            roles.add(rolUsuario);
-            roles.add(rolUsuarioMenu);
+            roles.add(RolUsuario);
+            roles.add(RolUsuarioMenu);
             return roles;
         }else{
             User  usario= new User();
             usario.setIdUsuario(0);
-            rolUsuarioMenu rolis = new rolUsuarioMenu();
+            RolUsuarioMenu rolis = new RolUsuarioMenu();
             roles.add(usario);
             roles.add(rolis);
             return roles;

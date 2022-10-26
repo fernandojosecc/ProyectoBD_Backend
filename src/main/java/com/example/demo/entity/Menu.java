@@ -3,13 +3,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "menu")
+@Table(name = "Menu")
 
-public class menu {
+public class Menu {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-
     @Column(name = "id_menu")
     private int idMenu;
 
@@ -20,7 +17,7 @@ public class menu {
     private String pagina;
 
     @OneToMany(mappedBy = "idMenu")
-    private List<rolUsuarioMenu>rolUsuarioMenuList;
+    private List<RolUsuarioMenu>rolUsuarioMenuList;
 
     public int getIdMenu() {
         return idMenu;
@@ -46,11 +43,11 @@ public class menu {
         this.pagina = pagina;
     }
 
-    public List<rolUsuarioMenu> getRolUsuarioMenuList() {
+    public List<RolUsuarioMenu> getRolUsuarioMenuList() {
         return rolUsuarioMenuList;
     }
 
-    public void setRolUsuarioMenuList(List<rolUsuarioMenu> rolUsuarioMenuList) {
+    public void setRolUsuarioMenuList(List<RolUsuarioMenu> rolUsuarioMenuList) {
         this.rolUsuarioMenuList = rolUsuarioMenuList;
     }
 }

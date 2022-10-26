@@ -1,31 +1,15 @@
 package com.example.demo.entity;
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "rol_usuario_menu")
-public class rolUsuarioMenu {
+@Table(name = "rol_usuario")
+public class RolUsuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-
-    @Column(name = "id_menu")
-    private int idMenu;
-
     @Column(name = "id_usuario")
     private int idUsuario;
 
     @Column(name = "id_rol")
     private int idRol;
-
-
-    public int getIdMenu() {
-        return idMenu;
-    }
-
-    public void setIdMenu(int idMenu) {
-        this.idMenu = idMenu;
-    }
 
     public int getIdUsuario() {
         return idUsuario;

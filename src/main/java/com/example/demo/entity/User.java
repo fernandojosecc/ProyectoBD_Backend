@@ -9,8 +9,10 @@ import java.util.List;
 @Table(name = "usuario")
 public class User implements Serializable {
     @Id
+/*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+*/
 
     @Column(name = "id_usuario")
     private int idUsuario;
@@ -19,10 +21,10 @@ public class User implements Serializable {
     private String contrasenia;
 
     @OneToMany(mappedBy = "idUsuario")
-    private List<rolUsuario>rolUsuarioList;
+    private List<RolUsuario>rolUsuarioList;
 
     @OneToMany(mappedBy = "idUsuario")
-    private List<rolUsuarioMenu>rolUsuarioMenuList;
+    private List<RolUsuarioMenu>rolUsuarioMenuList;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -40,19 +42,19 @@ public class User implements Serializable {
         this.contrasenia = contrasenia;
     }
 
-    public List<rolUsuario> getRolUsuarioList() {
+    public List<RolUsuario> getRolUsuarioList() {
         return rolUsuarioList;
     }
 
-    public void setRolUsuarioList(List<rolUsuario> rolUsuarioList) {
+    public void setRolUsuarioList(List<RolUsuario> rolUsuarioList) {
         this.rolUsuarioList = rolUsuarioList;
     }
 
-    public List<rolUsuarioMenu> getRolUsuarioMenuList() {
+    public List<RolUsuarioMenu> getRolUsuarioMenuList() {
         return rolUsuarioMenuList;
     }
 
-    public void setRolUsuarioMenuList(List<rolUsuarioMenu> rolUsuarioMenuList) {
+    public void setRolUsuarioMenuList(List<RolUsuarioMenu> rolUsuarioMenuList) {
         this.rolUsuarioMenuList = rolUsuarioMenuList;
     }
 }

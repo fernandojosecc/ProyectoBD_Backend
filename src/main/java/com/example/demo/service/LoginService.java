@@ -43,8 +43,8 @@ public class LoginService {
         ArrayList roles = new ArrayList<>();
         int longitud = userRepository.findByIdUsuarioAndContrasenia(credentials.getIdUsuario(),credentials.getContrasenia()).size();
         if(longitud>0){
-            Optional<rolUsuario> rolUsuario = rolUsuarioRepository.findById(credentials.getIdUsuario());
-            Optional<rolUsuarioMenu> rolUsuarioMenu = rolUsuarioMenuRepository.findById(credentials.getIdUsuario());
+            Optional<RolUsuario> rolUsuario = rolUsuarioRepository.findById(credentials.getIdUsuario());
+            Optional<RolUsuarioMenu> rolUsuarioMenu = rolUsuarioMenuRepository.findById(credentials.getIdUsuario());
             Optional<User> usuario= userRepository.findById(credentials.getIdUsuario());
             roles.add(usuario);
             roles.add(rolUsuario);
@@ -53,7 +53,7 @@ public class LoginService {
         }else{
             User  usario= new User();
             usario.setIdUsuario(0);
-            rolUsuarioMenu rolis = new rolUsuarioMenu();
+            RolUsuarioMenu rolis = new RolUsuarioMenu();
             roles.add(usario);
             roles.add(rolis);
             return roles;

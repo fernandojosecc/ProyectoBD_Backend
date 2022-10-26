@@ -4,7 +4,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tipo_marca")
-public class tipoMarca {
+public class TipoMarca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -16,7 +16,7 @@ public class tipoMarca {
     private int marca;
 
     @OneToMany(mappedBy = "idMarca")
-    private List<bus>busList;
+    private List<Bus>busList;
 
     public int getIdMarca() {
         return idMarca;
@@ -34,11 +34,11 @@ public class tipoMarca {
         this.marca = marca;
     }
 
-    public List<bus> getBusList() {
+    public List<Bus> getBusList() {
         return busList;
     }
 
-    public void setBusList(List<bus> busList) {
+    public void setBusList(List<Bus> busList) {
         this.busList = busList;
     }
 }

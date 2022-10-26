@@ -5,7 +5,7 @@ import java.util.List;
 @Entity
 @Table(name = "tiempo_viaje")
 
-public class tiempoViaje {
+public class TiempoViaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -17,7 +17,7 @@ public class tiempoViaje {
     private String tiempo;
 
     @OneToMany(mappedBy = "idTiempo")
-    private List<ruta>rutaList;
+    private List<Ruta>rutaList;
 
     public int getIdTiempoViaje() {
         return idTiempoViaje;
@@ -35,11 +35,11 @@ public class tiempoViaje {
         this.tiempo = tiempo;
     }
 
-    public List<ruta> getRutaList() {
+    public List<Ruta> getRutaList() {
         return rutaList;
     }
 
-    public void setRutaList(List<ruta> rutaList) {
+    public void setRutaList(List<Ruta> rutaList) {
         this.rutaList = rutaList;
     }
 }

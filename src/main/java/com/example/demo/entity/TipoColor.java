@@ -4,7 +4,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tipo_color")
-public class tipoColor {
+public class TipoColor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -16,7 +16,7 @@ public class tipoColor {
     private int color;
 
     @OneToMany(mappedBy = "idTipoColor")
-    private List<bus>busList;
+    private List<Bus>busList;
 
     public int getIdColor() {
         return idColor;
@@ -34,11 +34,11 @@ public class tipoColor {
         this.color = color;
     }
 
-    public List<bus> getBusList() {
+    public List<Bus> getBusList() {
         return busList;
     }
 
-    public void setBusList(List<bus> busList) {
+    public void setBusList(List<Bus> busList) {
         this.busList = busList;
     }
 }

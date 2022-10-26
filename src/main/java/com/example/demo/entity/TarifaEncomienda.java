@@ -4,7 +4,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tarifa_encomienda")
-public class tarifaEncomienda {
+public class TarifaEncomienda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -22,7 +22,7 @@ public class tarifaEncomienda {
     private String metroCubico;
 
     @OneToMany(mappedBy = "idTarifaEncomienda")
-    private List<encomienda>encomiendaList;
+    private List<Encomienda>encomiendaList;
 
     public int getIdTarifaEncomienda() {
         return idTarifaEncomienda;
@@ -56,11 +56,11 @@ public class tarifaEncomienda {
         this.metroCubico = metroCubico;
     }
 
-    public List<encomienda> getEncomiendaList() {
+    public List<Encomienda> getEncomiendaList() {
         return encomiendaList;
     }
 
-    public void setEncomiendaList(List<encomienda> encomiendaList) {
+    public void setEncomiendaList(List<Encomienda> encomiendaList) {
         this.encomiendaList = encomiendaList;
     }
 }

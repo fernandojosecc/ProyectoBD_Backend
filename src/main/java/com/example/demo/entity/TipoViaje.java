@@ -1,11 +1,10 @@
 package com.example.demo.entity;
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "tipo_viaje")
 
-public class tipoViaje {
+public class TipoViaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

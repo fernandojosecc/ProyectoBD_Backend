@@ -1,14 +1,10 @@
 package com.example.demo.entity;
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "login")
-public class login {
+@Table(name = "Login")
+public class Login {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-
     @Column(name = "id_usuario")
     private int idUsuario;
 

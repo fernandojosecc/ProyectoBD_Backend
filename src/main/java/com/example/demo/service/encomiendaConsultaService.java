@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/encomiendas")
@@ -34,14 +33,14 @@ public class encomiendaConsultaService {
     private ArrayList encomiendas(){
         ArrayList algo = new ArrayList<>();
 
-        List<encomienda> encomienda = encomiendaRepository.findAll();
-        List<ruta> ruta = rutaRepository.findAll();
-        List<tarifaEncomienda> tarifaEncomienda = tarifaEncomiendaRepository.findAll();
-        List<tipoEncomienda> tipoEncomienda = tipoEncomiendaRepository.findAll();
+        List<Encomienda> encomienda = encomiendaRepository.findAll();
+        List<Ruta> ruta = rutaRepository.findAll();
+        List<TarifaEncomienda> tarifaEncomienda = tarifaEncomiendaRepository.findAll();
+        List<TipoEncomienda> tipoEncomienda = tipoEncomiendaRepository.findAll();
         /*algo.add(encomienda);
-        algo.add(ruta);*/
+        algo.add(Ruta);*/
         algo.add(tarifaEncomienda);
-        /*algo.add(tipoEncomienda);*/
+        /*algo.add(TipoEncomienda);*/
         return algo;
     }
 }

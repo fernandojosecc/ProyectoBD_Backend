@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/viajes")
@@ -34,10 +33,10 @@ public class viajesConsultaService {
     private ArrayList buses(){
         ArrayList algo = new ArrayList<>();
 
-        List<bus> bus = busRepository.findAll();
-        List<ruta> ruta = rutaRepository.findAll();
-        List<tipoViaje> tipoViaje = tipoViajeRepository.findAll();
-        List<tiempoViaje> tiempoViaje = tiempoViajeRepository.findAll();
+        List<Bus> bus = busRepository.findAll();
+        List<Ruta> ruta = rutaRepository.findAll();
+        List<TipoViaje> tipoViaje = tipoViajeRepository.findAll();
+        List<TiempoViaje> tiempoViaje = tiempoViajeRepository.findAll();
         algo.add(bus);
         algo.add(ruta);
         algo.add(tipoViaje);

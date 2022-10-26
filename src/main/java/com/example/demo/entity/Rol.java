@@ -3,12 +3,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "rol")
-public class rol {
+@Table(name = "Rol")
+public class Rol {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-
     @Column(name = "id_rol")
     private int idRol;
 
@@ -28,10 +25,10 @@ public class rol {
     private int permisoConsultar;
 
     @OneToMany(mappedBy = "idRol")
-    private List<rolUsuario>rolUsuarioList;
+    private List<RolUsuario>rolUsuarioList;
 
     @OneToMany(mappedBy = "idRol")
-    private List<rolUsuarioMenu>rolUsuarioMenuList;
+    private List<RolUsuarioMenu>rolUsuarioMenuList;
 
     public int getIdRol() {
         return idRol;
@@ -81,19 +78,19 @@ public class rol {
         this.permisoConsultar = permisoConsultar;
     }
 
-    public List<rolUsuario> getRolUsuarioList() {
+    public List<RolUsuario> getRolUsuarioList() {
         return rolUsuarioList;
     }
 
-    public void setRolUsuarioList(List<rolUsuario> rolUsuarioList) {
+    public void setRolUsuarioList(List<RolUsuario> rolUsuarioList) {
         this.rolUsuarioList = rolUsuarioList;
     }
 
-    public List<rolUsuarioMenu> getRolUsuarioMenuList() {
+    public List<RolUsuarioMenu> getRolUsuarioMenuList() {
         return rolUsuarioMenuList;
     }
 
-    public void setRolUsuarioMenuList(List<rolUsuarioMenu> rolUsuarioMenuList) {
+    public void setRolUsuarioMenuList(List<RolUsuarioMenu> rolUsuarioMenuList) {
         this.rolUsuarioMenuList = rolUsuarioMenuList;
     }
 }

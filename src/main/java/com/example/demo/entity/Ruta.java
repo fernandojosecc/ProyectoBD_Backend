@@ -3,12 +3,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "ruta")
-public class ruta {
+@Table(name = "Ruta")
+public class Ruta {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-
     @Column(name = "id_ruta")
     private int idRuta;
 
@@ -31,7 +28,7 @@ public class ruta {
     private int idTiempo;
 
     @OneToMany(mappedBy = "idRuta")
-    private List<encomienda>encomiendaList;
+    private List<Encomienda>encomiendaList;
 
     public int getIdRuta() {
         return idRuta;
@@ -89,11 +86,11 @@ public class ruta {
         this.idTiempo = idTiempo;
     }
 
-    public List<encomienda> getEncomiendaList() {
+    public List<Encomienda> getEncomiendaList() {
         return encomiendaList;
     }
 
-    public void setEncomiendaList(List<encomienda> encomiendaList) {
+    public void setEncomiendaList(List<Encomienda> encomiendaList) {
         this.encomiendaList = encomiendaList;
     }
 }
