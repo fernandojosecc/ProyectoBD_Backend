@@ -1,41 +1,28 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.*;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.repository.loginRepository;
 import com.example.demo.repository.rolUsuarioRepository;
 import com.example.demo.repository.rolUsuarioMenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.repository.menuRepository;
-
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-@RestController
+/*@RestController
 @RequestMapping("/login")
-@CrossOrigin
-public class LoginService {
+@CrossOrigin*/
+public class NewLoginService {
 
-    @Autowired
-    UserRepository userRepository;
-
-    @Autowired
-     menuRepository menuRepository;
-
-    @Autowired
-    rolUsuarioRepository rolUsuarioRepository;
-
-    @Autowired
-    rolUsuarioMenuRepository rolUsuarioMenuRepository;
-
-
+    /*@Autowired
+    loginRepository loginRepository;
 
     //Servicio que devuelve un objeto del user si lo encuentra si es en blanco o null es porque no pasa la validacion
     @PostMapping(path = "/user")
-    private ArrayList loginTeacher(@RequestBody User credentials) {
+    private ArrayList loginTeacher(@RequestBody login credentials) {
         ArrayList usuario =new ArrayList<>();
-        usuario.add(user(credentials));
+        usuario.add(login(credentials));
         return usuario;
     }
 
@@ -58,5 +45,6 @@ public class LoginService {
             roles.add(rolis);
             return roles;
         }
-    }
+
+    }*/
 }
