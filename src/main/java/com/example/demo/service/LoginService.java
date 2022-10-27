@@ -10,6 +10,7 @@ import com.example.demo.repository.menuRepository;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -44,7 +45,7 @@ public class LoginService {
         int longitud = userRepository.findByIdUsuarioAndContrasenia(credentials.getIdUsuario(),credentials.getContrasenia()).size();
         if(longitud>0){
             Optional<RolUsuario> rolUsuario = rolUsuarioRepository.findById(credentials.getIdUsuario());
-            Optional<RolUsuarioMenu> rolUsuarioMenu = rolUsuarioMenuRepository.findById(credentials.getIdUsuario());
+            List<RolUsuarioMenu> rolUsuarioMenu = rolUsuarioMenuRepository.findByIdUsuario(credentials.getIdUsuario());
             Optional<User> usuario= userRepository.findById(credentials.getIdUsuario());
             roles.add(usuario);
             roles.add(rolUsuario);

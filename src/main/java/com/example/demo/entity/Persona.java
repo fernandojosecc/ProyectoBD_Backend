@@ -2,13 +2,14 @@ package com.example.demo.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Persona")
 public class Persona {
     @Id
     @Column(name = "id_persona")
-    private int idPersona;
+    private Integer idPersona;
 
     @Column(name = "nombre")
     private String nombre;
@@ -17,7 +18,7 @@ public class Persona {
     private String apellido;
 
     @Column(name = "telefono")
-    private int telefono;
+    private Integer telefono;
 
     @Column(name = "correo")
     private String correo;
@@ -26,14 +27,25 @@ public class Persona {
     private String direccion;
 
     @Column(name = "nit")
-    private int nit;
+    private Integer nit;
 
+    @Column(name = "id_tipo_persona")
+    private Integer idTipoPersona;
 
-    public int getIdPersona() {
+    @Column(name = "id_documento_identificacion")
+    private Integer idDocumentoIdentificacion;
+
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
+
+    @OneToMany(mappedBy = "idPersona")
+    private List<Encomienda>encomiendaList;
+
+    public Integer getIdPersona() {
         return idPersona;
     }
 
-    public void setIdPersona(int idPersona) {
+    public void setIdPersona(Integer idPersona) {
         this.idPersona = idPersona;
     }
 
@@ -53,11 +65,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public int getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
 
@@ -77,13 +89,43 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public int getNit() {
+    public Integer getNit() {
         return nit;
     }
 
-    public void setNit(int nit) {
+    public void setNit(Integer nit) {
         this.nit = nit;
     }
 
+    public Integer getIdTipoPersona() {
+        return idTipoPersona;
+    }
 
+    public void setIdTipoPersona(Integer idTipoPersona) {
+        this.idTipoPersona = idTipoPersona;
+    }
+
+    public Integer getIdDocumentoIdentificacion() {
+        return idDocumentoIdentificacion;
+    }
+
+    public void setIdDocumentoIdentificacion(Integer idDocumentoIdentificacion) {
+        this.idDocumentoIdentificacion = idDocumentoIdentificacion;
+    }
+
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public List<Encomienda> getEncomiendaList() {
+        return encomiendaList;
+    }
+
+    public void setEncomiendaList(List<Encomienda> encomiendaList) {
+        this.encomiendaList = encomiendaList;
+    }
 }

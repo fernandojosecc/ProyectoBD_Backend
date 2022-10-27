@@ -26,6 +26,9 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "idUsuario")
     private List<RolUsuarioMenu>rolUsuarioMenuList;
 
+    @OneToMany(mappedBy = "idUsuario")
+    private List<Persona>personaList;
+
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -56,5 +59,13 @@ public class User implements Serializable {
 
     public void setRolUsuarioMenuList(List<RolUsuarioMenu> rolUsuarioMenuList) {
         this.rolUsuarioMenuList = rolUsuarioMenuList;
+    }
+
+    public List<Persona> getPersonaList() {
+        return personaList;
+    }
+
+    public void setPersonaList(List<Persona> personaList) {
+        this.personaList = personaList;
     }
 }
