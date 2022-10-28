@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/encomiendas")
@@ -42,5 +43,10 @@ public class encomiendaConsultaService {
         algo.add(tarifaEncomienda);
         /*algo.add(TipoEncomienda);*/
         return algo;
+    }
+
+    @GetMapping (path = "/consultas/{id}")
+    private List<Encomienda> encomiedas(@PathVariable ("id") int id ){
+        return encomiendaRepository.findByIdPersona(id);
     }
 }
